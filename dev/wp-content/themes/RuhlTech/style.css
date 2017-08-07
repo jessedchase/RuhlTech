@@ -1,0 +1,556 @@
+/*
+Theme Name: Ruhl Tech
+Theme URI: http://wordpress.org/themes/blankslate
+Author: Bozeman Interactive
+Author URI: http://tidythemes.com/
+Description: 
+Version: 4.0.3
+License: GNU General Public License
+License URI: https://www.gnu.org/licenses/gpl.html
+Tags: black, blue, white, light, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
+Text Domain: blankslate
+
+BlankSlate WordPress Theme © 2011-2015 TidyThemes
+BlankSlate is distributed under the terms of the GNU GPL
+*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+
+
+/**** FONTS *******/
+@font-face {
+    font-family: 'bebas_neue_regularregular';
+    src: url('http://ruhltech.com/dev/fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('http://ruhltech.com/dev/fonts/bebasneue_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bebas_neuebold';
+    src: url('http://ruhltech.com/dev/fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('http://ruhltech.com/dev/fonts/bebasneue_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bebas_neuebook';
+    src: url('http://ruhltech.com/dev/fonts/bebasneue_book-webfont.woff2') format('woff2'),
+         url('http://ruhltech.com/dev/fonts/bebasneue_book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'cherry_jamregular';
+    src: url('http://ruhltech.com/dev/fonts/cacha-webfont.woff2') format('woff2'),
+         url('http://ruhltech.com/dev/fonts/cacha-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/**** GENERAL *****/
+body{
+	background-image:url(http://ruhltech.com/dev/images/darkbg.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
+	font-family: 'bebas_neuebook';
+	line-height:22px;
+	font-size:20px;
+}
+h1,h2,h3,h4{
+	font-family:'cherry_jamregular';
+	text-transform: uppercase;
+	margin-bottom:20px;
+}
+h1{
+	font-size:40px;
+}
+h2{
+	font-size:34px;
+}
+h3{
+	font-size:32px;
+}
+h4{
+	font-size:24px;
+}
+h3 span{
+	color:#9c0404;
+}
+p{
+	margin-bottom:10px;
+}
+.clear{
+	clear:both;
+	float:none;
+}
+.btn{
+	background-image:url(http://ruhltech.com/dev/images/buttonbg.png)!important;
+	background-repeat:none!important;
+	width:175px!important;
+	height:26px!important;
+	padding:20px 0px!important;
+	color:#fff;
+	font-family: 'cherry_jamregular';
+	display:block!important;
+	margin:0 auto!important;
+	text-align:center!important;
+	text-decoration: none!important;
+	transition:ease all 0.4s;
+}
+.btn:hover{
+	opacity:0.8;
+}
+input[type=text],textarea,input[type=email]{
+	width:300px;
+	padding:10px;
+	font-family:'bebas_neue_regularregular';
+	font-size:15px;
+	letter-spacing:1px;
+	border:1px solid #333!important;
+	-webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+input[type=text]:focus,textarea:focus,input[type=email]:focus{
+	border:1px solid #e9c026!important;
+	box-shadow: 0 0 5px rgba(233, 192, 38, 1)!important;
+}
+
+
+/**** HEADER ******/
+.container{
+	width:1000px;
+	margin:0 auto;
+	position:relative;
+}
+#topbar{
+	background:#9c0404;
+	color:#fff;
+	text-align:center;
+	padding:10px 0px;
+	font-family:'bebas_neue_regularregular';
+}
+#topbar ul{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+#topbar ul li{
+	display:inline-block;
+	margin:0px 20px;
+	font-size:20px;
+	letter-spacing:1px;
+}
+#topbar ul li a{
+	color:#fff;
+	text-decoration:underline;
+}
+#topbar ul li a:hover{
+	text-decoration:none;
+}
+#header{
+	/*background-image:url(http://ruhltech.com/dev/images/headerbg.jpg);*/
+	background-repeat:repeat;
+	background-size:cover;
+	text-align:center;
+	padding:10px 0px 15px 0px;
+}
+#header a{
+	transition:ease all 0.4s;
+}
+#header a:hover{
+	opacity:0.8;
+}
+/***** NAV *******/
+#nav{
+	background-image:url(http://ruhltech.com/dev/images/navbg.png);
+	background-repeat:repeat-x;
+	text-align:center;
+	position:relative;
+	z-index:3;
+	/*margin-top:-30px;*/
+	height:119px;
+	width:100%;
+}
+#nav ul{
+	margin:0;
+	text-align:center;
+	padding-top:50px;
+}
+#nav ul li{
+	display:inline-block;
+	position:relative;
+}
+#nav ul li a{
+	font-family:'cherry_jamregular';
+	color:#fff;
+	font-size:20px;
+	padding:20px;
+	text-decoration:none;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	transition:ease all 0.4s;
+}
+#nav ul li a:hover,#nav ul li.current_page_item a{
+	color:#9c0404;
+}
+#nav ul li ul { 
+    position: absolute;
+    width: 200px; 
+    margin: 0;
+    padding: 0;
+    display:none ; 
+	top:100%;
+	text-align:left;
+	background:#000000;
+	margin-top:20px;
+}
+#nav ul li:hover ul{
+	display:block;
+}
+#nav ul ul li + li {
+	background:none;
+	padding-left:0px;
+}
+#nav ul li ul li{
+	display:block;
+	border-bottom:1px solid #333;
+}
+#nav ul li ul li a{
+	display:block!important;
+	width:100%;
+	padding:10px;
+}
+#nav li + li {
+    background:url('http://ruhltech.com/dev/images/seperator.png') no-repeat top left;
+    padding-left: 20px
+}
+#mobilemenu{display:none;}
+
+/****** CONTENT ****/
+#slider,#featured{
+	width:100%;
+	height:auto;
+	z-index:1;
+	position:relative;
+	margin-top:-20px;
+}
+#featured img{
+	width:100%;
+	height:auto;
+}
+.soliloquy-caption,.featured_caption{
+	background:transparent!important;
+	bottom:25%!important;
+}
+.featured_caption{
+	position:absolute;
+	width:100%;
+	text-align:center;
+}
+.soliloquy-caption .btn{
+	height:66px!important;
+	margin-top:20px!important;
+}
+.soliloquy-caption-inside h3,.featured_caption h3 {
+	background-image:url(http://ruhltech.com/dev/images/slidetextbg.png);
+	background-repeat:repeat-x!important;
+	height:80px!important;
+	padding:15px 20px 20px 20px!important;
+	text-align:center!important;
+	font-size:50px!important;
+	color:#000!important;
+	min-width:230px!important;
+	display:inline-block!important;
+	margin:0 auto!important;
+}
+.featured_caption h3{
+	padding:25px 20px 20px 20px!important;
+}
+#leftside{
+	width:65%;
+	float:left;
+}
+#rightside{
+	float:right;
+	width:30%;
+}
+.section{
+	-webkit-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.75);
+	padding:80px 0px;
+	z-index:2;
+	position:relative;
+}
+#tools{
+	background-image:url(http://ruhltech.com/dev/images/lightbg.jpg);
+	background-repeat:repeat;
+	min-height:400px;
+	border-top:4px solid #9c0404;
+	border-bottom:4px solid #9c0404;
+}
+#tools h2{
+	color:#333;
+	font-size:42px;
+	text-align:center;
+}
+.distributor{
+	border:1px solid #;
+	
+}
+.distributorimg{
+	width:120px;
+}
+#tool{
+	position:absolute;
+	width:400px;
+	left:50%;
+	margin-left:-200px;
+	text-align:center;
+}
+#tool img{
+	width:100%;
+	height:auto;
+}
+#toolleft{
+	width:30%;
+	float:left;
+}
+#toolright{
+	width:30%;
+	float:right;
+	text-align:right; 
+	margin-top:200px;
+}
+#fabrication{
+	text-align:center;
+	color:#fff;
+	position:relative;
+}
+#fabrication h2{
+	color:#fff;
+	font-size:42px;
+	margin-bottom:10px;
+}
+#fabrication h4{
+	color:#e1b926;
+	letter-spacing:1px;
+}
+#fabbottonleft{
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+#fabbottonright{
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+#fabbottonleft,#fabbottonright{
+	width:150px;
+}
+#contactsection{
+	background-image:url(http://ruhltech.com/dev/images/redbg.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	text-align:center;
+	color:#fff;
+	position:relative;
+	border-top:4px solid #9c0404;
+	padding-bottom:0px;
+}
+#contactsection h2{
+	color:#fff;
+	font-size:42px;
+	margin-bottom:10px;
+}
+#contactsection a{
+	color:#fff;
+}
+#contactsection a:hover{
+	text-decoration:none;
+}
+.widget-container{
+	background:#333;
+	padding:20px;
+	margin-bottom:10px;
+	color:#fff;
+}
+.widget-container strong{
+	color:#fff;
+}
+.widget-container input[type=text]{
+	width:60%;
+}
+.widget-container #searchsubmit{
+	padding:10px!important;
+	background-color:#E9C026!important;
+	color:#333!important;
+	border:none!important;
+	outline:none!important;
+	-webkit-appearance: none;
+	border-radius: 0;
+	font-size:16px;
+	font-family: 'cherry_jamregular';
+}
+.widget-container a{
+	color:#E9C026;
+	text-decoration:none;
+	transition:ease all 0.4s;
+}
+.widget-container a:hover{
+	color:#fff;
+}
+.widget-container h3{
+	font-size:22px;
+	border-bottom:1px solid #ddd;
+	padding-bottom:10px;
+	margin-bottom:10px;
+	color:#fff;
+}
+.wpcf7-submit{
+	width:320px!important;
+	background-color:#e9c026!important;
+	color:#333!important;
+	-webkit-appearance: none;
+	border:none;
+	margin:0px auto!important;
+	padding:10px 0px!important;
+	display:block!important;
+	transition:ease all 0.4s;
+	-webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.75);
+	font-family:'cherry_jamregular';
+	font-size:24px!important;
+}
+.wpcf7-submit:hover{
+	opacity:0.8;
+}
+#tools .wpcf7-submit{
+	margin:0!important;
+}
+#map iframe{
+	-webkit-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.75);
+}
+
+@media only screen and (max-width: 1025px){
+	.container{
+		width:90%;
+	}
+	.soliloquy-caption{
+		bottom:0!important;
+	}
+	#toolleft,#toolright,#tool{
+		float:none;
+		width:100%;
+		position:relative;
+		left:auto;
+		margin-left:auto;
+		text-align:center;
+		margin-top:auto;
+	}
+	#tool img{
+		width:300px;
+		margin:10px auto;
+	}
+	.section h2,.section h1{
+		font-size:30px!important;
+	}
+	.section h3{
+		font-size:20px!important;
+	}
+	.soliloquy-caption h3{
+		font-size:30px!important;
+		background-image:none!important;
+		color:#fff!important;
+		height:auto!important;
+		padding: 0px!important;
+	}
+	#topbar ul li{
+		font-size:14px;
+	}
+	.btn,.soliloquy-caption .btn{
+		background-image:none!important;
+		padding:10px!important;
+		height:auto!important;
+		font-size:15px!important;
+		background-color:#9C0404!important;
+		-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+		margin:10px auto!important;
+		max-width:90%;
+	}
+	.btn:hover{
+		opacity:0.8!important;
+	}
+}
+@media only screen and (max-width: 960px){
+	#topbar ul li{
+		font-size:14px;
+		margin:0px 5px;
+	}
+	#rightside,#leftside{float:none;clear:both;width:100%;}
+	body{
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		font-size:12px;
+		background-size:auto;
+		background-repeat:repeat;
+	}
+	#nav{
+		background-image:none;
+		background-color:#000;
+		padding:10px 0px;
+		height:auto;
+		border-top:1px solid #ddd;
+		border-bottom:1px solid #ddd;
+	}
+	#mobilemenu{
+		display:block;
+		margin:0 auto;
+		width:40px;
+		height:auto;
+	}
+	#nav ul{
+		margin:0px;
+		padding:0px;
+		display:none;
+	}
+	
+	#nav ul li{
+		display:block;
+		font-size:14px;
+		border-bottom:1px solid #333;
+	}
+	#nav ul li:last-child{
+		border-bottom:none;
+	}
+	#nav ul li a{
+		padding:10px 0px!important;
+		font-size:18px;
+		display:block;
+	}
+	#nav li + li {
+		padding-left:0px;
+		background-image:none;
+	}
+	#nav ul li ul { 
+		position: relative;
+		width: 100%; 
+		margin: 0;
+		padding: 0;
+		display:block!important; 
+		top:auto;
+		text-align:center;
+		background:#000000;
+		margin-top:0px;
+	}
+}

@@ -1,0 +1,9 @@
+AuthName "ruhltech.com"
+AuthType Basic
+AuthUserFile "/services/webpages/r/u/ruhltech.com/public/materials/.htpasswd"
+<Limit GET POST PUT>
+require valid-user
+# Order deny,allow
+# Deny from all
+# Allow from all
+</Limit>
